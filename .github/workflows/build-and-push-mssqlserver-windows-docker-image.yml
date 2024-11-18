@@ -33,7 +33,7 @@ jobs:
         run: |
           if (-not $env:SQL_VERSION) { $env:SQL_VERSION = '2022' }
           if (-not $env:WIN_VERSION) { $env:WIN_VERSION = 'ltsc2022' }
-          docker build --build-arg SQL_VERSION=$env:SQL_VERSION --build-arg WIN_VERSION=$env:WIN_VERSION -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/mssqlserver:$env:SQL_VERSION-$env:WIN_VERSION .\how_to_run_mssqlserver_in_windows_container
+          docker build --build-arg SQL_VERSION=$env:SQL_VERSION --build-arg WIN_VERSION=$env:WIN_VERSION -t mssqlserver:$env:SQL_VERSION-$env:WIN_VERSION .\how_to_run_mssqlserver_in_windows_container
         env:
           SQL_VERSION: ${{ inputs.sql_version }}
           WIN_VERSION: ltsc${{ inputs.win_version }}
